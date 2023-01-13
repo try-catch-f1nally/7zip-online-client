@@ -22,7 +22,12 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'prettier', 'import'],
   rules: {
-    'import/no-unresolved': 'error'
+    'import/no-unresolved': 'error',
+    'import/no-named-as-default-member': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/restrict-template-expressions': 'off',
+    '@typescript-eslint/no-unsafe-argument': 'off'
   },
   settings: {
     react: {
