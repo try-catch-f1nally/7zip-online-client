@@ -1,5 +1,5 @@
 import React, {FC, useState} from 'react';
-import {Button, Col, Form, InputGroup, Row} from 'react-bootstrap';
+import {Button, Col, Form, InputGroup, Row, Spinner} from 'react-bootstrap';
 import DropzoneBox from '../DropzoneBox/DropzoneBox';
 import * as Yup from 'yup';
 import {Formik} from 'formik';
@@ -15,7 +15,7 @@ const ArchiveForm: FC = () => {
   const validationSchema = Yup.object().shape({
     files: Yup.array().min(1, 'Please select at least one file')
   });
-
+  console.log(isLoading);
   const initialValues: CreateArchiveBody = {
     files: [],
     format: 'zip'
@@ -86,6 +86,7 @@ const ArchiveForm: FC = () => {
           </Form.Group>
           <Button size={'lg'} type={'submit'} className={'px-5 d-block m-auto mt-5'}>
             Save all as {values.format.toUpperCase()}
+            {isLoading && <Spinner className="ms-2" animation="border" variant="dark" size="sm" />}
           </Button>
         </Form>
       )}

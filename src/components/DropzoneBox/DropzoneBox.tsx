@@ -79,7 +79,7 @@ const DropzoneBox: FC<DropzoneBoxProps> = ({setFieldValue, invalidMessage}) => {
             <input {...getInputProps()} />
             <div className={'fs-5 py-4'}>
               {getMessage(isDragActive)}&nbsp;
-              {files?.length && <CloseButton className={'fs-6'} onClick={resetFiles} />}
+              {!!files?.length && <CloseButton className={'fs-6'} onClick={resetFiles} />}
             </div>
           </div>
           {typeof invalidMessage === 'string' && (
